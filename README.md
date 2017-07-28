@@ -13,7 +13,22 @@ This is a simple library for parsing [AIS](https://en.wikipedia.org/wiki/Automat
 
 
 ## How to use
+
 ### Install
+Add dependency to your project.
+For Gradle as an example, add the snippet like below to `build.gradle`.
+
+```java
+// if it were needed
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.kokufu.nmea.ais:ais-parser:0.1'
+}
+```
+
 
 ### Parse
 To parse AIS record, instantiate `AisParser` and call `AisParser#parse(String)` for each line.
@@ -104,6 +119,7 @@ If you want to parse the record which has not been implemented yet,
 you can create a subclass of `AisRecord` and set it as custom record.
 
 Below is an example to set "Base Station Report" record known as "Type 4."
+
 ```java
 AisParser aisParser = new AisParser();
 
